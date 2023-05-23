@@ -1,9 +1,9 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-22.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.05";
     flake-utils.url = "github:numtide/flake-utils";
 
-    wxedid_src.url = "https://sourceforge.net/projects/wxedid/files/wxedid-0.0.27.tar.gz";
+    wxedid_src.url = "https://sourceforge.net/projects/wxedid/files/wxedid-0.0.29.tar.gz";
     wxedid_src.flake = false;
   };
 
@@ -17,7 +17,7 @@
 
           wxedid = pkgs.stdenv.mkDerivation rec {
             pname = "wxedid";
-            version = "0.0.27";
+            version = "0.0.29";
 
             src = wxedid_src;
 
@@ -30,7 +30,7 @@
             ];
 
             buildInputs = with pkgs; [
-              wxGTK30
+              wxGTK32
             ];
           };
         };
